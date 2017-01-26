@@ -6,9 +6,9 @@ TARGET = test
 
 CC = gcc
 CFLAGS = -g -c
-INC = -I/home/raxis/include
+INC = -I/home/sumin3280/systemprogramming-mentoring
 
-$(TARGET) : $(OBJECS)
+$(TARGET) : $(OBJECTS)
 	$(CC) -o $(TARGET) $(OBJECTS)
 
 %.o : %.c io.h

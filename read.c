@@ -2,5 +2,5 @@
 
 void fred(int arg)
 {
-	printf("fred : you passed %d\n" arg);
+	printf("fred : you passed %d\n", arg);
 }
