@@ -4,11 +4,16 @@
 #include <pthread.h>
 
 int counter = 0;
+pthread_mutex_t lock;
+
 #define NUM_THREAD 10000
 void * thr_main(void *arg)
 {
+	pthread_mutex_lock(&lock);
 	counter++;
-	sleep(1);
+
+	pthread_mutex_unlock(&lock);
+
 	return((void*)1);
 }
 
@@ -29,5 +34,8 @@ int main(void)
 		if (err != 0) exit(2);
 	}
 	printf("done %d!\n", counter);
+	
+
+
 	return 0;
 }
